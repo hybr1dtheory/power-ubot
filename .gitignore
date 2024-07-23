@@ -1,0 +1,5 @@
+/ubotvenv
+/__pycache__
+*.pyc
+*.session
+powerdata.csv
