@@ -1,5 +1,5 @@
 """This module runs a loop iterating through the channel list 
-and collects power-off and power-on event data for the configured period. 
+and collects power-off and power-on event data. 
 The bot does not handle real-time events, but only parses the channels history, 
 processes and saves it to the powerdata.csv file, and then finishes its work"""
 from pyrogram import Client
@@ -8,11 +8,9 @@ from time import sleep
 import re
 import pandas as pd
 from channels import CHANNELLIST
+from datecfg import START_DATE, FINISH_DATE, set_last_date
 
 
-# beginning and ending dates of the period of interest (beginning date included)
-START_DATE = datetime.fromisoformat("2024-07-01")
-FINISH_DATE = datetime.fromisoformat("2024-07-18")
 app = Client("ubot")
 
 
@@ -70,6 +68,7 @@ async def main():
     # Writing data to a file in append mode and without headers
     with open("powerdata.csv", 'a', encoding="utf-8") as f:
         result.to_csv(f, header=False)
+    set_last_date(FINISH_DATE)
     
     print("FINISH")
 

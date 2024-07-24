@@ -3,3 +3,4 @@
 *.pyc
 *.session
 powerdata.csv
+lastdate.json
