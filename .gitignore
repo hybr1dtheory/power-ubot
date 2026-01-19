@@ -2,5 +2,7 @@
 /__pycache__
 *.pyc
 *.session
-powerdata.csv
+*.csv
 lastdate.json
+channels.py
+newsession.py
