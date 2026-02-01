@@ -5,7 +5,7 @@ import json
 def set_last_date(dt: datetime):
     with open("lastdate.json", 'w') as fw:
         lst = {"lastdate": f"{dt.date()}"}
-        json.dump(lst, fw)
+        json.dump(lst, fw, indent=4)
 
 
 lst: dict
