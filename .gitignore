@@ -3,6 +3,9 @@
 *.pyc
 *.session
 *.csv
+*.xlsx
+*.txt
 lastdate.json
-channels.py
+channels.json
+backup.py
 newsession.py
